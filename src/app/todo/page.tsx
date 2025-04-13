@@ -1,40 +1,19 @@
 'use client'
-import { useState } from 'react';
 
+import { TodoInput } from '@/components/todo/todo_input';
+import { TodoOutput } from '@/components/todo/todo_output';
+import { useTodos } from '@/hocks/useTodos';
 
 export default function Todo() {
-  const [inputValue, setInputValue] = useState('')
-  const handelInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-  }
-  const [todos, setTodos] = useState<string[]>([]);
-  const handelAddTodo = () => {
-    setTodos([...todos, inputValue]);
-    setInputValue('');
-  }
-  const handelDeleteTodo = (index: number) => {
-    // const newTodos = [...todos];
-    // newTodos.splice(index, 1);
-    const newTodos = todos.filter((_, i) => i !== index);
-    setTodos(newTodos);
-  }
+  const Todos = useTodos();
 
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <h1 className="text-4xl font-bold">todoページです</h1>
-        <div className='input-area'>
-          <input type='text' value={inputValue} onChange={handelInputChange}className='border border-black' />
-          <button type='button' onClick={handelAddTodo}>+</button>
-        </div>
-        <div className='output-area'>
-          <ul>
-            {todos.map((todo, index) => {
-              return <li key={index}>{todo}<button type='button' onClick={() => {handelDeleteTodo(index)}}>-</button></li>
-            })}
-          </ul>
-        </div>
+        <TodoInput inputValue={Todos.inputValue} handleInputChange={Todos.handleInputChange} handelAddTodo={Todos.handelAddTodo} />
+        <TodoOutput todos={Todos.todos} handelDeleteTodo={Todos.handelDeleteTodo} />
       </main>
     </div>
   );
