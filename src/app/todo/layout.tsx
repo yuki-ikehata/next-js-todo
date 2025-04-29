@@ -6,8 +6,8 @@ export const metadata: Metadata = {
 
 export default function TodoLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return <>{children}</>;
 }

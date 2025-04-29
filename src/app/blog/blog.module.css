@@ -1,0 +1,48 @@
+.container {
+  padding: 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnailWrap {
+  width: 100%;
+  aspect-ratio: 3/2;
+  overflow: hidden;
+}
+
+.thumbnailWrap:hover {
+  transform: translate(0.4rem, 0.5rem);
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  box-shadow: 0.3rem 0.5rem 1.2rem black;
+  transition: all 0.3s;
+  transition: transform 0.3s;
+}
+
+.thumbnailImage:hover {
+  transform: translate(0.4rem, 0.5rem);
+  box-shadow: none;
+}
+
+.grid {
+  display: grid;
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+}
