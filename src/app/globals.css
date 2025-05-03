@@ -1,47 +1,37 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #ffffff;
+	--foreground: #171717;
 }
 
 /* ベースは最小幅の時の流体サイズ */
 html {
-  font-size: calc(10 / 375 * 100vw);
+	font-size: calc(10 / 375 * 100vw);
 }
 
 /* 中画面（768px以上） */
 @media (min-width: 768px) {
-  html {
-    font-size: calc(10 / 1280 * 100vw);
-  }
+	html {
+		font-size: calc(10 / 1280 * 100vw);
+	}
 }
 
 /* 大画面（1280px以上）は固定 */
 @media (min-width: 1280px) {
-  html {
-    font-size: 10px;
-  }
+	html {
+		font-size: 10px;
+	}
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  word-wrap: anywhere;
-  color: var(--foreground);
-  background: var(--background);
-  -webkit-text-size-adjust: 100%;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	word-wrap: anywhere;
+	color: var(--foreground);
+	background: var(--background);
+	-webkit-text-size-adjust: 100%;
 	line-height: 1.5;
-  letter-spacing: 0.05rem;
-  font-weight: 400;
-}
-
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+	letter-spacing: 0.05rem;
+	font-weight: 400;
 }
 
 a {
@@ -51,7 +41,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 ul,
@@ -60,7 +50,7 @@ ol {
 }
 
 img {
-  display: block;
+	display: block;
 	font-style: italic;
 }
 
@@ -118,3 +108,5 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+@import "tailwindcss";

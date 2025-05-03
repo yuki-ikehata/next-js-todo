@@ -10,6 +10,7 @@ export default function Home() {
         <Image src="/next.svg" alt="next.js" width={100} height={20} />
         <Link href="/about" className={utilStyles.headingXl}>Aboutページへ</Link>
         <Link href="/todo" className={utilStyles.headingXl}>Todoページへ</Link>
+        <Link href="/newTodo" className={utilStyles.headingXl}>NewTodoページへ</Link>
         <Link href="/blog" className={utilStyles.headingXl}>Blogページへ</Link>
       </div>
     </div>
