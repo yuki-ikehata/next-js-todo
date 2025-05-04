@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
@@ -30,10 +32,10 @@ body {
 	background: var(--background);
 	-webkit-text-size-adjust: 100%;
 	line-height: 1.5;
-	letter-spacing: 0.05rem;
+	letter-spacing: 0.05em;
 	font-weight: 400;
 }
-
+/* 
 a {
 	color: inherit;
 	text-decoration: none;
@@ -52,10 +54,10 @@ ol {
 img {
 	display: block;
 	font-style: italic;
-}
+} */
 
 /* フォームリセット */
-
+/* 
 button {
 	box-shadow: none;
 	cursor: pointer;
@@ -107,6 +109,4 @@ select::-ms-expand {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
-
-@import "tailwindcss";
+} */
