@@ -1,10 +1,20 @@
-import { AddTask } from "@/components/newTodo/AddTask";
-import { TodoList } from "@/components/newTodo/TodoList";
-import { getAllTodos } from "@/hooks/api";
+"use client";
 
-export default async function NewTodo() {
-    const todos = await getAllTodos();
-    console.log(todos);
+import { AddTask } from "@/components/newTodo/AddTask";
+import { TodoList } from "@/components/newTodo/todoList";
+import { getAllTodos } from "@/hooks/api";
+import { useEffect, useState } from "react";
+import { Task } from "@/types/types";
+
+export default function NewTodo() {
+    const [todos, setTodos] = useState<Task[]>([]);
+
+    useEffect(() => {
+        (async () => {
+            const data = await getAllTodos();
+            setTodos(data);
+        })();
+    }, [todos]);
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-200">

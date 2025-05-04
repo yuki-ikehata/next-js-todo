@@ -35,6 +35,11 @@ body {
 	letter-spacing: 0.05em;
 	font-weight: 400;
 }
+
+button {
+	cursor: pointer;
+}
+
 /* 
 a {
 	color: inherit;
