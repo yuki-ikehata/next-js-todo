@@ -12,6 +12,7 @@ export default function Home() {
         <Link href="/todo" className={utilStyles.headingXl}>Todoページへ</Link>
         <Link href="/newTodo" className={utilStyles.headingXl}>NewTodoページへ</Link>
         <Link href="/blog" className={utilStyles.headingXl}>Blogページへ</Link>
+        <Link href="/newBlog" className={utilStyles.headingXl}>NewBlogページへ</Link>
       </div>
     </div>
   );

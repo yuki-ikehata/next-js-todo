@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": "next.js13-udemy",
+      "title": "Next.js13をUdemyで学ぶ",
+      "content": "shincodeさんのUdemy講座を学んでいます。",
+      "createdAt": "2025-05-10"
+    },
+    {
+      "id": "json-server",
+      "title": "JSON Serverを使ってみる",
+      "content": "JSON Serverを使ってみます。JSON Serverを使ってみます。JSON Serverを使ってみます。JSON Serverを使ってみます。JSON Serverを使ってみます。JSON Serverを使ってみます。JSON Serverを使ってみます。JSON Serverを使ってみます。JSON Serverを使ってみます。JSON Serverを使ってみます。JSON Serverを使ってみます。",
+      "createdAt": "2025-05-09"
+    },
+    {
+      "id": "blog",
+      "title": "blog",
+      "content": "blog",
+      "createdAt": "2025-05-11T11:36:18.405Z"
+    }
+  ]
+}

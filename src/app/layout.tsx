@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Image from "next/image";
-import styles from "./layout.module.css";
-import utilStyles from "./../app/styles/utils.module.css";
+import Header from "./header";
+import Footer from "./footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,8 +22,6 @@ export const metadata: Metadata = {
   description: 'シンプルで使いやすいTodoリストアプリケーション',
 };
 
-const name = 'TodoList App';
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,16 +30,14 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased container mx-auto bg-slate-700 text-slate-50`}
       >
-        <div className={styles.container}>
-          <header className={styles.header}>
-            <Image src="/images/profile.png" alt="profile" width={100} height={100} className={`${utilStyles.borderCircle} ${styles.headerImage}`} />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </header>
-          <main>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-grow">
             {children}
           </main>
+          <Footer />
         </div>
       </body>
     </html>
