@@ -1,9 +1,27 @@
 import { ArticleList } from "@/components/article/articleList";
-import { getAllArticles } from "@/hooks/newBlogAPI";
+// import { getAllArticles } from "@/hooks/newBlogAPI";
+import { supabase } from "@/utils/supabaseClient";
 
 export default async function NewBlog() {
-    const articles = await getAllArticles();
-    console.log(articles);
+    // const articles = await getAllArticles();
+    // console.log(articles);
+
+    try {
+        // 直接Supabaseを使用してデータを取得
+        const { data: articles, error } = await supabase
+            .from("posts")
+            .select("*")
+
+        // Supabaseのクエリエラー
+        if (error) {
+            console.error("Supabaseエラー:", error);
+            return <div>記事の読み込み中にエラーが発生しました</div>;
+        }
+
+         // データ存在チェック
+        if (!articles) {
+            return <div>記事が見つかりませんでした</div>;
+        }
 
     return (
         <div className="md:flex">
@@ -38,4 +56,9 @@ export default async function NewBlog() {
             </aside>
         </div>
     )
+} catch (error) {
+        // 予期せぬエラー（ネットワーク、ランタイムなど）
+        console.error("システムエラー:", error);
+        return <div>予期せぬエラーが発生しました</div>;
+    }
 }
